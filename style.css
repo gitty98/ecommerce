@@ -1,0 +1,351 @@
+@font-face {
+    font-family: myWebsiteFont;
+    src: url("font/Roboto_Slab/RobotoSlab-VariableFont_wght.ttf");
+}
+@font-face {
+    font-family: titleFont;
+    src: url("font/Yuji_Mai/YujiMai-Regular.ttf");
+}
+body {
+    font-family: myWebsiteFont;
+}
+.title {
+    font-family: titleFont;
+    text-align: center;
+    position: relative;
+    text-transform: capitalize;
+    padding: 50px 10px;
+}
+.title::after {
+    content: '';
+    width: 30px;
+    height: 5px;
+    background: chocolate;
+    display: block;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+a {
+    text-decoration: none;
+    color: #000;
+    text-transform: uppercase;
+    display: block;
+    padding: 10px;
+}
+a:hover {
+    background: #eff;
+}
+.nav-menu li {
+    text-align: center;
+    list-style: none;
+}
+nav {
+    background-color: #efe;
+    position: sticky;
+    top: 0;
+    z-index: 2;
+}
+.nav-logo {
+    float: left;
+}
+.nav-toggle {
+    display: inline-flex;
+    flex-direction: column;
+    float: right;
+}
+.nav-toggle span {
+    display: inline-block;
+    width: 20px;
+    height: 2px;
+    background: #000;
+    margin: 2px 0px;
+}
+.nav-menu {
+    clear: both;
+    display: none;
+}
+nav::after {
+    content: '';
+    display: block;
+    clear: both;
+}
+.dropdown > a::after {
+    content: '\f105';
+    font-family: 'Font Awesome 5 Free';
+    padding-left: 3px;
+    color: chocolate;
+}
+.dropdown-menu {
+    display: none;
+}
+.active {
+    display: block;
+}
+.red {
+    color: red;
+}
+/* Banner */
+.banner {
+    width: 100%;
+    height: 400px;
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("img/robert-lukeman-_RBcxo9AU-U-unsplash.jpg");
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.banner-content {
+    color: #fff;
+    display: inline-block;
+}
+.banner-content h1 {
+    overflow: hidden;
+    white-space: nowrap;
+    animation: typing 7s steps(23) forwards, cursor 0.8s ease infinite;
+    letter-spacing: 0.5em;
+    font-size: 1rem;
+}
+@keyframes typing {
+    from {width: 0%;}
+    to {width: 100%;}
+}
+@keyframes cursor {
+    from {border-right: 2px solid transparent;}
+    to {border-right: 2px solid #efe;}
+}
+/* Our products */
+.container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 20px 0px;
+}
+.container .box {
+    width: 98%;
+    height: 250px;
+    overflow: hidden;
+    margin: 1%;
+    position: relative;
+}
+.container .box .box-img {
+    width: 100%;
+    height: 85%;
+    overflow: hidden;
+}
+.container .box .box-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: all 0.7s ease;
+}
+.container .box p {
+    text-align: center;
+}
+.box-overlay {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 0, 255, 0.5);
+    opacity: 0;
+    transition: all 0.5s ease-in;
+}
+.container .box:hover .box-overlay {
+    opacity: 1;
+    z-index: 1;
+}
+.container .box:hover .box-img img {
+    transform: scale(1.4);
+}
+/* About */
+.about-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.6)), url("../img/robert-lukeman-_RBcxo9AU-U-unsplash.jpg");
+    background-attachment: fixed;
+    color: #eee;
+}
+.about-content, .about-progress {
+    width: 100%;
+    padding: 20px;
+}
+.about-progress .progress {
+    padding: 20px;
+}
+.about-progress .progress progress {
+    width: 80%;
+    display: inline-block;
+}
+
+/* Contact Us */
+.contact-container {
+    background: rgb(219, 59, 99);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+.contact-container .form-group {
+    margin: 10px 0px;
+}
+.contact-container .form-group .form-label {
+    display: block;
+    margin-bottom: 5px;
+}
+.contact-container .form-group .form-control {
+    width: 100%;
+    outline: 2px solid rgb(207, 70, 52);
+    border-radius: 10px;
+    padding: 5px;
+}
+.contact-container .btn-submit {
+    text-align: center;
+}
+.contact-container .btn-submit input[type="submit"] {
+    padding: 10px;
+    text-transform: uppercase;
+    background: transparent;
+    border: 2px double rgb(207, 70, 52);
+    border-radius: 10px;
+    color: #eee;
+    transition: all 0.5s ease-in-out;
+}
+.contact-container .btn-submit input[type="submit"]:hover {
+    background: rgb(207, 70, 52);
+    transform: scale(1.1);
+}
+/* customer */
+.customer {
+    background: pink;
+}
+.customer-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.customer-container .box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0px;
+}
+.customer-container .box .box-img {
+    width: 50%;
+    overflow: hidden;
+    padding: 20px;
+}
+.customer-container .box .box-info {
+    width: 50%;
+    overflow: hidden;
+}
+.customer-container .box .box-img img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+.customer-container .box .box-info h6 {
+    font-size: 1.6rem;
+}
+.customer-container .box .box-info p {
+    font-size: 0.7rem;
+}
+
+/* testing */
+.test-img {
+    border: 3px solid red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.test-img-box {
+    border: 3px solid green;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+.test-img-box img {
+    width: 100%;
+    height: 100%;
+}
+
+/* footer */
+.footer {
+    padding: 30px;
+    background: pink;
+    border: 2px solid #efe;
+}
+.footer p {
+    text-align: center;
+}
+@media only screen and (min-width: 576px) {
+    /* Nav Bar */
+    .nav-toggle {
+        display: none;
+    }
+    .nav-menu {
+        clear: none;
+        display: block;
+        float: right;
+    }
+    .nav-menu ul li {
+        display: inline-block;
+    }
+    .dropdown:hover .dropdown-menu {
+        display: block;
+    }
+    ul.dropdown-menu li {
+        display: block;
+        text-align: left;
+        white-space: nowrap;
+    }
+    .dropdown {
+        position: relative;
+    }
+    .dropdown-menu {
+        position: absolute;
+        right: 0;
+        background-color: #efe;
+    }
+    /* Banner */
+    .banner-content h1 {
+        font-size: 1.3rem;
+    }
+    /* Our products */
+    .container .box {
+        width: 48%;
+        margin: 1%;
+    }
+    /* About Us */
+    .about-content, .about-progress {
+        width: 50%;
+    }
+    /* our Customer */
+    .customer-container {
+        flex-wrap: nowrap;
+    }
+    .customer-container .box .box-img img {
+        width: 100px;
+        height: 100px;
+    }
+}
+
+@media only screen and (min-width:768px) {
+    /* our products */
+    .container .box {
+        width: 23%;
+        margin: 1%;
+    }
+}
